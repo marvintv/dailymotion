@@ -3,7 +3,7 @@ error_reporting(0); // Just so that you script won't get thrown off
 if ($_GET['user']) // ?user=channelname
 {
 	$user = $_GET['user'];
-	$token = ''; //insert token -- can never be permenant because of DailyMotion's token expiration
+	$token = ''; //insert token -- can never be permanant because of DailyMotion's token expiration
 	$array = file_get_contents("https://api.dailymotion.com/user/{$user}/videos?access_token=" . $token . "&limit=100"); // Defining the JSON, the limit is 100 per page.
 	$rawr = json_decode($array);
 	foreach ( $rawr->list as $list )
@@ -36,20 +36,6 @@ if ($_GET['user']) // ?user=channelname
 	echo 'USAGE: ?user=';
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
